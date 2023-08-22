@@ -1,0 +1,13 @@
+name = "JosephusProblem"
+uuid = "834cbb1f-a4cc-469d-99a7-9aaacbeda5a4"
+authors = ["Jake Ireland <jakewilliami@icloud.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
