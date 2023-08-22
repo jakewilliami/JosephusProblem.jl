@@ -1,0 +1,29 @@
+\documentclass[border=3pt]{standalone}
+
+\usepackage{amsmath}
+
+% https://tex.stackexchange.com/a/14245/181375
+\def\BitAnd{\mathbin{\&}}
+\def\BitOr{\mathbin{|}}
+\def\ShiftLeft{\ll}
+\def\ShiftRight{\gg}
+\def\BitNeg{\ensuremath{\mathord{\lnot}}}  % Alternatively: \sim
+
+\begin{document}
+
+% https://tex.stackexchange.com/a/50171/181375
+% https://tex.stackexchange.com/a/183047/181375
+$ \displaystyle
+    \begin{aligned} 
+        g(n) &= \lfloor\log_2(n)\rfloor\\
+        h(n) &= n \BitAnd (1 \ShiftLeft g(n))\\\\
+        %
+        f_1(n) &= (n - h(n)) \ShiftLeft 1\\
+        %
+        f_2(n) &= \BitNeg h(2n) \BitAnd ((n \ShiftLeft 1) \ShiftRight 1)\\%\\
+        %
+        % f_3(n) &= (n \ShiftLeft 1) \ShiftRight 1\\
+    \end{aligned}
+$
+
+\end{document}
