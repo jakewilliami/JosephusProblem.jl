@@ -4,15 +4,19 @@ module JosephusProblem
 
 export josephus_perm
 
+function msb_pos(n::T) where {T <: Integer}
+    # Get the position (0-indexed) of the most significant bit
+    # See also Base.top_set_bit
+    # Equivalently: floor(Int, log2(n))
+
+    return 8sizeof(n) - leading_zeros(n) - 1
+end
+
 function highest_one_bit(n::T) where {T <: Integer}
     # Get the largest power of 2 that is ≤ n
     # See also Java's Integer.highestOneBit
 
-    msb_pos = 8sizeof(n) - leading_zeros(n) - 1
-    # See also Base.top_set_bit
-    # Equivalently: msb_pos = floor(Int, log2(n))
-
-    return n & (1 << msb_pos)
+    return n & (1 << msb_pos(n))
 end
 
 function josephus_perm(n::T) where {T <: Integer}
@@ -23,8 +27,9 @@ function josephus_perm(n::T) where {T <: Integer}
     # ~highest_one_bit(2n) & ((n << 1) | 1)
     # Ref: https://en.wikipedia.org/wiki/Josephus_problem#Bitwise
 
-    # Possible start to solution (Dillon Mayhew):
-    # (n >> 1) << 1
+    # Equivalent solution by Dillon Mayhew:
+    # (n & ~(1 << msb_pos(n))) << 1 + 1
+    # In which we clear the most significant bit and double the result
 end
 
 end
