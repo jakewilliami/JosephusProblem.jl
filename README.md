@@ -24,3 +24,7 @@ We calculate the result using the bitwise formulae f<sub>i</sub>:
 We can see a pattern that emerges which illustrates these formulae nicely:
 
 ![formulae](./assets/plot.png)
+
+## Citation
+
+If your research depends on JosephusProblem.jl, please consider giving us a formal citation: [`citation.bib`](./citation.bib).
