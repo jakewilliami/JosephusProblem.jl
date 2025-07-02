@@ -8,7 +8,7 @@ You can read more about this problem [on Wikipedia](https://en.wikipedia.org/wik
 
 ## Quick Start
 
-```julia
+```julia-repl
 julia> using JosephusProblem
 
 julia> josephus_perm(100)
